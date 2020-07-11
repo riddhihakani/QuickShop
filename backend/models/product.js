@@ -10,10 +10,10 @@ var productSchema = new mongoose.Schema({
     description : String,
     supplier: String,
     postdate: { type:Date, default: Date.now },
-    subcategory: [
+    category: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref:"subCategory"
+            ref:"Category"
         }
     ],
     reviews: [

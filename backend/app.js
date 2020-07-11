@@ -9,10 +9,10 @@ var mongoose = require('mongoose');
 
 var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
-    categoryRouter    = require('./routes/categories'),
-    subcategoryRouter = require('./routes/subcategories'),
-    reviewRouter      = require('./routes/reviews'),
-    productRouter     = require('./routes/products')
+    categoryRouter    = require('./routes/categories')
+    // subcategoryRouter = require('./routes/subcategories'),
+    // reviewRouter      = require('./routes/reviews'),
+    // productRouter     = require('./routes/products')
 
 mongoose.connect("mongodb://localhost/Quickshop_app",{useNewUrlParser : true, useUnifiedTopology:true});
 
@@ -34,9 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/categories', categoryRouter);
-app.use('/category/:id/subcategories', subcategoryRouter);
-app.use('/category/:id/subcategories/:id/products', productRouter);
-app.use('/category/:id/subcategories/:id/products/:id/reviews', reviewRouter);
+
+
 
 
 module.exports = app;
