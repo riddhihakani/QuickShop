@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    MatIconModule,
     FormsModule,
+    MatInputModule,
     BrowserAnimationsModule
   ],
   providers: [],
