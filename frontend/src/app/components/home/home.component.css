@@ -1,3 +1,9 @@
 body{
    height: 1000px;
 }
+
+#carouselExampleFade{
+
+   height: 10%;
+   width : 90%;
+}
