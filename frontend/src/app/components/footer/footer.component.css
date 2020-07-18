@@ -6,3 +6,9 @@
 #list{
     list-style: none;
 }
+
+#admin{
+    background-color: rgb(45, 49, 59);
+    height: 50px;
+    color: white !important;
+}

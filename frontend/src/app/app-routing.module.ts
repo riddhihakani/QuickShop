@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
 
      { path : '' , component : HomeComponent },
+     { path  : 'admin' , loadChildren : 'app/admin/admin.module#AdminModule' },
      { path : 'LoginForm', component : LoginFormComponent },
      { path : 'RegisterationForm', component : RegisterFormComponent },
 
