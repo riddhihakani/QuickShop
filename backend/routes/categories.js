@@ -1,6 +1,6 @@
 var express = require("express");
 var router  = express.Router();
-var Category = require("../models/categories");
+var Category = require("../models/category");
 //var middleware = require("../middleware");
 
 //show all categories

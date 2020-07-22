@@ -3,7 +3,7 @@ var router  = express.Router();
 var Product = require("../models/product");
 //var middleware = require("../middleware");
 
-router.get('/',(req,res) => {
+router.get('/',(req,res,next) => {
 
     Product.find({},(err,allProducts) => {
         if(err){

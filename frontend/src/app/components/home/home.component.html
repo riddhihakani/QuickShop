@@ -1,27 +1,15 @@
-<div class="row justify-content-center">
-    <div class="col-sm-2" id="col1">
-        <div class="row">
-            <div class="col-sm-2">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos%2Fshopping&psig=AOvVaw1tUowZq3YFZjZmN9cKU_wc&ust=1595255467643000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODqru7D2eoCFQAAAAAdAAAAABAD">
-            </div>
-            <div class="col-sm-2">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos%2Fshopping&psig=AOvVaw1tUowZq3YFZjZmN9cKU_wc&ust=1595255467643000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODqru7D2eoCFQAAAAAdAAAAABAD">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2">
-               <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos%2Fshopping&psig=AOvVaw1tUowZq3YFZjZmN9cKU_wc&ust=1595255467643000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODqru7D2eoCFQAAAAAdAAAAABAD"> 
-            </div>
-            <div class="col-sm-2">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos%2Fshopping&psig=AOvVaw1tUowZq3YFZjZmN9cKU_wc&ust=1595255467643000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODqru7D2eoCFQAAAAAdAAAAABAD">
-            </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-3 m-3" *ngFor='let p of products'>
+            <div class="card" style="width: 18rem;" >
+                <img [src]="p.image" class="card-img-top" alt="{{p.name}}" >
+                <div class="card-body" (click)='selectProduct(p.id)'>
+                  <h5 class="card-title">{{p.name | titlecase}}</h5>
+                  <p class="card-text">{{p.brand}}</p>
+                  <p class="card-text">{{p.price | currency : 'INR'}}</p>
+                  <button class="btn btn-outline-success" [class.disabled]='p.quantity < 1' [class.btn-outline-danger]='p.quantity < 1' [disabled]='p.quantity < 1' >{{ p.quantity < 1 ? 'OUT OF STOCK' : 'ADD TO CART'}}</button>
+                </div>
+              </div>
         </div>
     </div>
-    <div class="col-sm-2" id="col2">
-        
-    </div>
-    <div class="col-sm-2" id="col3">
-        
-    </div>
-
 </div>
