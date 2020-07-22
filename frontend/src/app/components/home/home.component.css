@@ -2,8 +2,6 @@ body{
    height: 1000px;
 }
 
-#carouselExampleFade{
-
-   height: 10%;
-   width : 90%;
+#col1,#col2,#col3{
+   background-color: white;
 }

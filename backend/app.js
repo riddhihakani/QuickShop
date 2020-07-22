@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 
 var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
-    categoryRouter    = require('./routes/categories')
+    productRouter    = require('./routes/products')
     // subcategoryRouter = require('./routes/subcategories'),
     // reviewRouter      = require('./routes/reviews'),
     // productRouter     = require('./routes/products')
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/categories', categoryRouter);
+app.use('/product', productRouter);
 
 
 
