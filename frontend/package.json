@@ -23,7 +23,11 @@
     "@angular/router": "~10.0.3",
     "bootstrap": "^4.5.0",
     "ngx-flickity": "0.0.9",
+    "ngx-spinner": "^10.0.1",
+    "ngx-toaster": "^1.0.1",
+    "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",
+    "toastr": "^2.1.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },

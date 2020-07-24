@@ -10,13 +10,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
-//import { FlickityModule } from 'ngx-flickity';
+// import { FlickityModule } from 'ngx-flickity';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SingleProductComponent } from './components/single-product/single-product.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,9 @@ import { SingleProductComponent } from './components/single-product/single-produ
     HomeComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    SingleProductComponent,
-  
+    SingleProductComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import { SingleProductComponent } from './components/single-product/single-produ
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     BrowserModule,

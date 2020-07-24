@@ -1,7 +1,10 @@
 export interface ProductModelServer {
-    id: Number;
+    id: number;
     name: String;
     category: String;
+    subcategory: String;
+    sizes: [];
+    supplier:String;
     brand:String;
     description: String;
     image: String;
@@ -11,7 +14,7 @@ export interface ProductModelServer {
   }
   
   
-  export interface serverResponse  {
+  export interface serverResponse{
     count: number;
     products: ProductModelServer[]
   };

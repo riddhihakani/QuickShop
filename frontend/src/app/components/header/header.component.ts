@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
+import { CartModelServer } from 'src/app/models/cart.model';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,8 +11,11 @@ export class HeaderComponent implements OnInit {
   
   categories : any[] = [];
 
-  constructor(private categoryService : CategoryService) { }
+  constructor(private categoryService : CategoryService,
+              private cartService: CartService) { }
   
+  cartData: CartModelServer;
+  cartTotal: number;
   getCategory(){
     this.categoryService.getAllCategories().subscribe((category : {categories : any[]}) => {
       this.categories = category.categories;
@@ -19,6 +24,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.cartService.cartTotal$.subscribe(total => this.cartTotal = total)
+    this.cartService.cartDataObs$.subscribe(data => this.cartData = data)
   }
 
   
