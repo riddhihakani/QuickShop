@@ -1,0 +1,13 @@
+#formcol{
+    background-color: rgb(211, 207, 207);
+    border-radius: 2px solid black;
+}
+
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+input.ng-valid{
+    border: 1px solid rgb(22, 189, 22);
+}

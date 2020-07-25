@@ -6,7 +6,7 @@ var reviewSchema = new mongoose.Schema({
     customer: {
         id: {
             type : mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            ref: 'User'
 
         },
         username:String

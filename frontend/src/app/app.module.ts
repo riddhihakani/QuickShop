@@ -11,14 +11,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 // import { FlickityModule } from 'ngx-flickity';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule} from 'ngx-toastr';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,10 @@ import { ToastrModule} from 'ngx-toastr';
     HomeComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    CartComponent,
+    CheckoutComponent,
+    ThankyouComponent
 
 
   ],
@@ -36,28 +38,19 @@ import { ToastrModule} from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatCardModule,
-    MatIconModule,
     FormsModule,
-    MatInputModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatFormFieldModule,
     NgxSpinnerModule,
+    AdminModule,
     ToastrModule.forRoot()
   ],
   exports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatCardModule,
     FormsModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatFormFieldModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
