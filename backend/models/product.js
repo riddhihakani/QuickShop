@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var productSchema = new mongoose.Schema({
 
+    _id:Number,
     sizes: [],
     name: String,
     brand: String,
@@ -12,19 +13,8 @@ var productSchema = new mongoose.Schema({
     supplier: String,
     subcategory: String,
     postdate: { type:Date, default: Date.now },
-    category: {
-        id :{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category'
-        },
-        name :String
-     },
-    reviews: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Review"
-        }
-    ]
+    category: String,
+   
 });
 
 module.exports = mongoose.model('Product', productSchema);

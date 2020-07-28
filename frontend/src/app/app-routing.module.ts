@@ -5,6 +5,8 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { HomeComponent } from './components/home/home.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { from } from 'rxjs';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -12,7 +14,9 @@ const routes: Routes = [
      { path  : 'admin' , loadChildren : 'app/admin/admin.module#AdminModule' },
      { path : 'LoginForm', component : LoginFormComponent },
      { path : 'RegisterationForm', component : RegisterFormComponent },
-     { path: 'product/:id', component: SingleProductComponent },
+     { path: 'MyCart', component: CartComponent},
+     { path: 'view-product/:id' , component: SingleProductComponent},
+     { path: 'checkout' , component: CheckoutComponent }
 
 ];
 

@@ -37,12 +37,12 @@ export class CheckoutComponent implements OnInit {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
   }
   onCheckout() {
-      //  this.spinner.show().then(p => {
-      //  this.cartService.CheckoutFromCart(1);
-    //  });
+      //  removed spinner from here
+        this.cartService.CheckoutFromCart(1);
+     
  
  
-   //console.log(this.checkoutForm.value);
+   console.log(this.checkoutForm.value);
  
     }
 

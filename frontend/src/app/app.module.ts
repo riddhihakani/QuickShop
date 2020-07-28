@@ -18,6 +18,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { AdminModule } from './admin/admin.module';
+import { MaterialModule } from './material/material.module';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { AdminModule } from './admin/admin.module';
     BrowserAnimationsModule,
     NgxSpinnerModule,
     AdminModule,
+    MaterialModule,
+    MatBadgeModule,
+    MatIconModule,
     ToastrModule.forRoot()
   ],
   exports: [
@@ -50,6 +56,9 @@ import { AdminModule } from './admin/admin.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    MaterialModule,
+    MatBadgeModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [],

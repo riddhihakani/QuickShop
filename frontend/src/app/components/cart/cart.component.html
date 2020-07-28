@@ -1,8 +1,13 @@
-<div class="container">
-    <div *ngIf="cartData.data[0].numInCart === 0;" class="text-center my-5">
-      <h4>Your Cart Is Empty</h4>
-      <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+<div class="container mt-5 mb-5">
+  <div class="row mt-5 justify-content-center" id="empty">
+    <div class="col-sm-6">
+      <div *ngIf="cartData.data[0].numInCart === 0;" class="text-center my-5">
+        <h4>Your Cart Is Empty</h4>
+        <button class="btn btn-warning btn-lg mt-3" routerLink="/">SHOP</button>
     </div>
+    </div>
+  </div>
+
   
     <ng-container *ngIf="cartData.data[0].numInCart !== 0">
       <div class="row">
@@ -59,8 +64,8 @@
   
         <div class="col-md-12 d-flex mb-5">
           <div class="d-flex w-100 justify-content-between flex-sm-column flex-md-row">
-            <a routerLink="/checkout" class="btn btn-danger btn-sm order-1">Checkout</a>
-            <a routerLink="/" class="btn btn-success btn-sm order-0">Continue Shopping</a>
+            <a [routerLink]="['/checkout']" class="btn btn-danger btn-sm order-1">Checkout</a>
+            <a [routerLink]="['/']" class="btn btn-success btn-sm order-0">Continue Shopping</a>
           </div>
         </div>
   

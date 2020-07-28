@@ -192,8 +192,8 @@ UpdateCartData(index, increase: Boolean) {
 
 }
 DeleteProductFromCart(index) {
-  /*    console.log(this.cartDataClient.prodData[index].prodId);
-      console.log(this.cartDataServer.data[index].product.id);*/
+    // console.log(this.cartDataClient.prodData[index].prodId);
+    console.log(this.cartDataServer.data[index].product.id)
 
   if (window.confirm('Are you sure you want to delete the item?')) {
     this.cartDataServer.data.splice(index, 1);

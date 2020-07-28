@@ -1,6 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var Product = require("../models/product");
+const product = require("../models/product");
 //var middleware = require("../middleware");
 
 router.get('/',(req,res,next) => {
@@ -37,16 +38,16 @@ router.get('/',(req,res,next) => {
 
 
 //get particular category
-// router.get('/:id',(req,res) => {
-//     Category.findById(req.params.id).exec((err, foundCategory) => {
-//         if(err){
-//             console.log(err);
-//         }else{
+router.get('/:id',(req,res) => {
+    Product.findById(req.params.id).exec((err, foundProduct) => {
+        if(err){
+            console.log(err);
+        }else{
             
-//             res.json(foundCategory);
-//         }
-//     });
-// });
+            res.json(foundProduct);
+        }
+    });
+});
 
 //update existing category
 // router.put('/:id',(req,res) =>{

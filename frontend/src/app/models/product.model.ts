@@ -1,15 +1,15 @@
 export interface ProductModelServer {
     id: number;
-    name: String;
-    category: String;
-    subcategory: String;
+    name: string;
+    category: string;
+    subcategory: string;
     sizes: [];
-    supplier:String;
-    brand:String;
-    description: String;
-    image: String;
-    price: Number;
-    quantity: Number;
+    supplier:string;
+    brand:string;
+    description: string;
+    image: string;
+    price: number;
+    quantity: number;
   
   }
   

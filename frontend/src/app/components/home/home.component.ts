@@ -13,22 +13,24 @@ export class HomeComponent implements OnInit {
 
   products: any[] = [];
   SERVICE_URL = environment.SERVICE_URL;
-  constructor(private producService: ProductService,
+  constructor(private productService: ProductService,
               private router: Router,
               private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.producService.getAllProducts().subscribe((prods) => {
+    this.productService.getAllProducts().subscribe((prods) => {
       this.products = prods;
       console.log(this.products);
     });
   }
 
-  selectProduct(id: Number) {
-    return this.router.navigate(['/product', id]).then();
+  selectProduct(id: number) {
+    console.log('selected product' + id);
+    return this.router.navigate(['/view-product', id]).then();
   }
 
   AddtoCart(id: number){
+    console.log(id);
     this.cartService.AddProductToCart(id);
   }
 
