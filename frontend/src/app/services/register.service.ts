@@ -10,7 +10,15 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RegisterService {
- 
+  selectedUser: User = {
+    fullName: '',
+    email: '',
+    password: ''
+  };
 
   constructor() { }
+
+  postUser(user: User){
+    return this.http.post(environment.apiBaseUrl+'/register',user);
+  }
 }

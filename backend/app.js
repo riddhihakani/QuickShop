@@ -12,11 +12,10 @@ var mongoose = require('mongoose');
 
 var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
-    productRouter    = require('./routes/products')
+    productRouter    = require('./routes/products'),
     categoryRouter    = require('./routes/categories')
-    // subcategoryRouter = require('./routes/subcategories'),
-    // reviewRouter      = require('./routes/reviews'),
-    // productRouter     = require('./routes/products')
+  
+   
 
 mongoose.connect("mongodb://localhost/Quickshop_app",{useNewUrlParser : true, useUnifiedTopology:true});
 
