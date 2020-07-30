@@ -13,7 +13,7 @@ var UserSchema = new mongoose.Schema({
     
 });
 
-userSchema.pre('save', function (next) {
+UserSchema.pre('save', function (next) {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(this.password, salt, (err, hash) => {
             this.password = hash;
@@ -23,12 +23,12 @@ userSchema.pre('save', function (next) {
     });
 });
 
-userSchema.methods.verifyPassword = function (password) {
+UserSchema.methods.verifyPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
 };
 
 
-userSchema.methods.generateJwt = function () {
+UserSchema.methods.generateJwt = function () {
     return jwt.sign({ _id: this._id},
         process.env.JWT_SECRET,
     {

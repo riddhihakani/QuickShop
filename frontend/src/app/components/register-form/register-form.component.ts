@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder,Validators, NgForm } from '@angular/forms';
 import { ConfirmedValidator } from './confirmed.validator';
+import { RegisterService } from '../../services/register.service'
 
 @Component({
   selector: 'app-register-form',
@@ -14,9 +15,12 @@ export class RegisterFormComponent implements OnInit {
   email : String = '';
   password : String = '';
   confirmPassword : String ='';
+  showSucessMessage: boolean;
+  serverErrorMessages: string;
   // terms : boolean ;
 
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder,
+            private regService: RegisterService) { 
     this.registerForm = fb.group({
       fname : ['',Validators.required,Validators.maxLength(30)],
       mnumber : ['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
@@ -38,11 +42,11 @@ export class RegisterFormComponent implements OnInit {
   authorizeData(registerForm:any){
 
     console.log('form submitted');
-    this.userService.postUser(form.value).subscribe(
+    this.regService.postUser(registerForm.value).subscribe(
       res => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
-        this.resetForm(form);
+        this.resetForm(registerForm);
       },
       err => {
         if (err.status === 422) {
@@ -55,13 +59,15 @@ export class RegisterFormComponent implements OnInit {
 
   }
 
-  resetForm(form: NgForm) {
-    this.userService.selectedUser = {
+  resetForm(registerForm: NgForm ) {
+    this.regService.selectedUser = {
       fullName: '',
       email: '',
-      password: ''
+      password: '',
+      repassword:'',
+      number:''
     };
-    form.resetForm();
+    registerForm.resetForm();
     this.serverErrorMessages = '';
   }
 

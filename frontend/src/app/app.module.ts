@@ -22,7 +22,7 @@ import { MaterialModule } from './material/material.module';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,

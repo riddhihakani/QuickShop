@@ -5,6 +5,7 @@ var jwtLogin = require('jwt-login');
 var roles = require('user-groups-roles');
 var path = require('path');
 var cors = require('cors');
+var passport = require('passport');
 var bodyparser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
