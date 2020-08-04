@@ -8,7 +8,7 @@ var jwtHelper = require('../config/jwtHelper');
 
 router.post('/register',ctrlUser.register);
 router.post('/authenticate',ctrlUser.authenticate);
-router.get('/userProfile',jwtHelper.verifyJwtToken,ctrlUser.UserProfile);
+//router.get('/userProfile',jwtHelper.verifyJwtToken,ctrlUser.UserProfile);
 
 
 

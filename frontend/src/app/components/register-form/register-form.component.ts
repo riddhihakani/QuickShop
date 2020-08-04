@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, NgForm } from '@angular/forms';
-import { ConfirmedValidator } from './confirmed.validator';
-import { RegisterService } from '../../services/register.service'
+import { RegisterService } from '../../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -14,22 +14,21 @@ export class RegisterFormComponent implements OnInit {
   number : String = '';
   email : String = '';
   password : String = '';
-  confirmPassword : String ='';
+  // confirmPassword : String ='';
   showSucessMessage: boolean;
   serverErrorMessages: string;
   // terms : boolean ;
 
   constructor(private fb : FormBuilder,
-            private regService: RegisterService) { 
+             private regService: RegisterService,
+             private router: Router) { 
     this.registerForm = fb.group({
       fname : ['',Validators.required,Validators.maxLength(30)],
       mnumber : ['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       mail : ['',Validators.required,Validators.email],
       pswrd : ['',Validators.required,Validators.minLength(6)],
-      repswrd : ['',Validators.required,Validators.minLength(6)]
+      // repswrd : ['',Validators.required,Validators.minLength(6)]
       // tnc : ['',Validators.required]
-    },{
-      validator: ConfirmedValidator('pswrd','repswrd')
     });
   }
 
@@ -47,6 +46,7 @@ export class RegisterFormComponent implements OnInit {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(registerForm);
+        this.router.navigate(['/loginForm']);
       },
       err => {
         if (err.status === 422) {
