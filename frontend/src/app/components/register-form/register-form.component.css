@@ -11,3 +11,8 @@ input.ng-invalid.ng-touched{
 input.ng-valid{
     border: 1px solid rgb(22, 189, 22);
 }
+
+
+#main{
+    margin-top: 10%;
+}

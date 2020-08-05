@@ -22,11 +22,15 @@
   <div class="row justify-content-center m-3" *ngIf="cartData.data[0].numInCart !==0">
     <div class="col-sm-6">
       <div class="row" *ngFor='let c of cartData.data; let i=index' id='cart'>
-        <div class="col-sm-4">
+        <div class="col-sm-4 m-1">
  
         </div>
-        <div class="col-sm-6">
-           <h4>{{c.product.name}} -by  {{c.product.brand}}</h4>
+        <div class="col-sm-6 m-1">
+          <div class="d-flex justify-content-between">
+            <div > <h4>{{c.product.name}}</h4></div>
+            <div ><button type="button" class="btn btn-outline-danger" (click)="cartService.DeleteProductFromCart(i)"><i class="fas fa-trash-alt"></i></button></div>
+          </div>
+           <h5>{{c.product.brand}}</h5>        
            <p>{{c.product.description}}</p>
            <h6>Price : {{c.product.price | currency:'INR'}}</h6>
            <form>

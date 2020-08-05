@@ -10,6 +10,7 @@ var bodyparser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 
 var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
@@ -18,7 +19,7 @@ var indexRouter       = require('./routes/index'),
   
    
 
-mongoose.connect("mongodb://localhost/Quickshop_app",{useNewUrlParser : true, useUnifiedTopology:true});
+mongoose.connect("mongodb://localhost/Quickshop_app",{useNewUrlParser : true, useUnifiedTopology:true, useCreateIndex:true});
 
 mongoose.connection.on('connected',() => {
     console.log('mongodb connected');

@@ -12,7 +12,8 @@
 }
 
 #total{
-  background-color: rgb(211, 207, 207);
+  background-color: rgb(255, 253, 253);
+  border: 2px solid black;
 }
 /* form {
     width: 300px;
