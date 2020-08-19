@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, NgForm } from '@angular/forms';
-import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,7 +19,6 @@ export class RegisterFormComponent implements OnInit {
   // terms : boolean ;
 
   constructor(private fb : FormBuilder,
-             private regService: RegisterService,
              private router: Router) { 
     this.registerForm = fb.group({
       fname : ['',Validators.required,Validators.maxLength(30)],
@@ -40,35 +38,20 @@ export class RegisterFormComponent implements OnInit {
   }
   authorizeData(registerForm:any){
 
-    console.log('form submitted');
-    this.regService.postUser(registerForm.value).subscribe(
-      res => {
-        this.showSucessMessage = true;
-        setTimeout(() => this.showSucessMessage = false, 4000);
-        this.resetForm(registerForm);
-        this.router.navigate(['/loginForm']);
-      },
-      err => {
-        if (err.status === 422) {
-          this.serverErrorMessages = err.error.join('<br/>');
-        }
-        else
-          this.serverErrorMessages = 'Something went wrong.Please contact admin.';
-      }
-    );
+    
 
   }
 
-  resetForm(registerForm: NgForm ) {
-    this.regService.selectedUser = {
-      fullName: '',
-      email: '',
-      password: '',
-      repassword:'',
-      number:''
-    };
-    registerForm.resetForm();
-    this.serverErrorMessages = '';
-  }
+  // resetForm(registerForm: NgForm ) {
+  //   this.regService.selectedUser = {
+  //     fullName: '',
+  //     email: '',
+  //     password: '',
+  //     repassword:'',
+  //     number:''
+  //   };
+  //   registerForm.resetForm();
+  //   this.serverErrorMessages = '';
+  // }
 
 }

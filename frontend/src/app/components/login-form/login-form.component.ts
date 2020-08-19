@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators, NgForm } from '@angular/forms';
-import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +13,6 @@ export class LoginFormComponent implements OnInit {
   password : String = '';
   serverErrorMessages: string;
   constructor(private fb : FormBuilder,
-              private regService: RegisterService,
               private router: Router) {
     this.loginForm = fb.group({
       mail : ['',Validators.required,Validators.email],
@@ -26,16 +24,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   authorizeData(loginForm:any){
-    this.regService.login(loginForm.value).subscribe(
-      res => {
-        this.regService.setToken(res['token']);
-        this.router.navigateByUrl('/');
-      },
-      err => {
-        this.serverErrorMessages = err.error.message;
-        
-      }
-    );
+   
 
   }
 
