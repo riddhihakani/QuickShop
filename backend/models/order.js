@@ -10,4 +10,4 @@ var orderSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Order', categorySchema);
+module.exports = mongoose.model('Order', orderSchema);

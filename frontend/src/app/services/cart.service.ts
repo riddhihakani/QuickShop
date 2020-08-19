@@ -230,14 +230,14 @@ DeleteProductFromCart(index) {
 
 CheckoutFromCart(userId: Number) {
 
-  this.http.post(`${this.SERVICE_URL}orders/payment`, null).subscribe((res: { success: Boolean }) => {
+  this.http.post(`${this.SERVICE_URL}/orders/payment`, null).subscribe((res: { success: Boolean }) => {
     console.clear();
 
     if (res.success) {
 
 
       this.resetServerData();
-      this.http.post(`${this.SERVICE_URL}orders/new`, {
+      this.http.post(`${this.SERVICE_URL}/orders/new`, {
         userId: userId,
         products: this.cartDataClient.prodData
       }).subscribe((data: OrderConfirmationResponse) => {

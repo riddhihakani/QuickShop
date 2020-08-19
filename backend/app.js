@@ -15,7 +15,8 @@ var bcrypt = require('bcrypt');
 var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
     productRouter    = require('./routes/products'),
-    categoryRouter    = require('./routes/categories')
+    categoryRouter    = require('./routes/categories'),
+    orderRouter       = require('./routes/order')
   
    
 
@@ -40,6 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
 app.use('/categories', categoryRouter);
+app.use('/orders',orderRouter);
 
 
 

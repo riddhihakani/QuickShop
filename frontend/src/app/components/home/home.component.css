@@ -2,8 +2,19 @@ body{
    height: 1000px ;
 }
 
+
+
+#carouselconatiner{
+   margin-top: 40%;
+}
+
+
+#carousel img{
+   height: 300px !important;
+   width: 100%;
+}
 #home{
-   margin-top: 10%;
+   margin-top: 5%;
 }
 
 #col1,#col2,#col3{
