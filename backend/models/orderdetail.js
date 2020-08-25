@@ -17,4 +17,4 @@ var orderDetailSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('OrderDetail', categorySchema);
+module.exports = mongoose.model('OrderDetail',orderDetailSchema);
