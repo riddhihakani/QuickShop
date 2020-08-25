@@ -11,6 +11,13 @@ var productSchema = new mongoose.Schema({
     image: String,
     description : String,
     supplier: String,
+    reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+
+    ],
     subcategory: String,
     postdate: { type:Date, default: Date.now },
     category: String,

@@ -16,7 +16,8 @@ var indexRouter       = require('./routes/index'),
     usersRouter       = require('./routes/users'),
     productRouter    = require('./routes/products'),
     categoryRouter    = require('./routes/categories'),
-    orderRouter       = require('./routes/order')
+    orderRouter       = require('./routes/order'),
+    reviewRouter     = require('./routes/reviews')
   
    
 
@@ -42,6 +43,7 @@ app.use('/users', usersRouter);
 app.use('/products', productRouter);
 app.use('/categories', categoryRouter);
 app.use('/orders',orderRouter);
+app.use('/reviews',reviewRouter);
 
 
 
