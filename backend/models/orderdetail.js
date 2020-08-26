@@ -12,8 +12,7 @@ var orderDetailSchema = new mongoose.Schema({
         id:{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
-        },
-        name : String
+        }
     }
 });
 

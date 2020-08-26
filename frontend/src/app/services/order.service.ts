@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ProductResponseModel } from '../models/order.model';
 import { environment } from 'src/environments/environment';
 
 
@@ -16,6 +15,16 @@ export class OrderService {
 
   
   getSingleOrder(orderId: Number) {
-    return this.http.get<ProductResponseModel[]>(`${this.SERVICE_URL}orders/${orderId}`).toPromise();
+    return this.http.get<ProductResponseModel[]>(`${this.SERVICE_URL}/orders/${orderId}`).toPromise();
   }
+}
+
+
+interface ProductResponseModel {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  quantityOrdered: number;
+  image: string;
 }

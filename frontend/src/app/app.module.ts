@@ -17,7 +17,6 @@ import { ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import { AdminModule } from './admin/admin.module';
 import { MaterialModule } from './material/material.module';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
@@ -47,7 +46,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    AdminModule,
     MaterialModule,
     MatBadgeModule,
     MatIconModule,
