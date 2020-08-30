@@ -78,18 +78,6 @@ export class CartService {
                 }
  }
 
- CalculateSubTotal(index): Number {
-  let subTotal = 0;
-
-  const p = this.cartDataServer.data[index];
-  // @ts-ignore
-  subTotal = p.product.price * p.numInCart;
-
-  return subTotal;
-}
-
-
-
  AddProductToCart(id: number, quantity?: number) {
 
   this.productService.getSingleProduct(id).subscribe(prod => {
@@ -108,7 +96,7 @@ export class CartService {
         progressBar: true,
         progressAnimation: 'increasing',
         positionClass: 'toast-top-right'
-      })
+      });
     }  // END of IF
     // Cart is not empty
     else {
@@ -301,9 +289,19 @@ private resetServerData() {
   this.cartDataObs$.next({...this.cartDataServer});
 }
 
+CalculateSubTotal(index): Number {
+  let subTotal = 0;
 
+  const p = this.cartDataServer.data[index];
+  // @ts-ignore
+  subTotal = p.product.price * p.numInCart;
+
+  return subTotal;
+}
 
 }
+
+
 
 
 interface OrderConfirmationResponse {

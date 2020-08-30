@@ -17,7 +17,7 @@ export class ProductService {
 
   }
 
-  getSingleProduct(id: Number): Observable<ProductModelServer> {
+  getSingleProduct(id: number): Observable<ProductModelServer> {
     return this.http.get<ProductModelServer>(this.SERVICE_URL + '/products/' + id);
   }
 

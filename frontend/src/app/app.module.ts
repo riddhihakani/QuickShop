@@ -21,7 +21,7 @@ import { MaterialModule } from './material/material.module';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import { ProfileComponent } from './components/profile/profile.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [

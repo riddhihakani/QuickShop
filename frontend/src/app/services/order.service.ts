@@ -15,16 +15,27 @@ export class OrderService {
 
   
   getSingleOrder(orderId: Number) {
-    return this.http.get<ProductResponseModel[]>(`${this.SERVICE_URL}/orders/${orderId}`).toPromise();
+    return this.http.get<ProductResponseModel[]>(this.SERVICE_URL + '/orders/' + orderId).toPromise();
   }
 }
 
 
 interface ProductResponseModel {
+  // id: number;
+  // title: string;
+  // description: string;
+  // price: number;
+  // quantityOrdered: number;
+  // image: string;
   id: number;
-  title: string;
+  name: string;
+  category: string;
+  subcategory: string;
+  sizes: [];
+  supplier:string;
+  brand:string;
   description: string;
-  price: number;
-  quantityOrdered: number;
   image: string;
+  price: number;
+  quantity: number;
 }
