@@ -16,7 +16,7 @@
     "http-msgs": "^1.0.9",
     "jsonwebtoken": "^8.5.1",
     "jwt-login": "0.0.3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mongoose": "^5.9.23",
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
